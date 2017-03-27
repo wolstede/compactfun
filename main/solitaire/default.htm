@@ -30,9 +30,21 @@ var thiscfpage='solitaire'
 
 var interruptsrequired=0
 
+var thedate = new Date();
+var thenow = thedate.getTime();
+ 
+var thelater=thenow+2000
+
+while (thedate.getTime()<thelater)
+{
+thedate=new Date()
+}
+
+var thewindowsizes=[window.innerWidth, window.innerHeight,document.documentElement.clientWidth, document.documentElement.clientHeight]
+
 var scalef
-var screenwidth=window.innerWidth
-var screenheight=window.innerHeight
+var screenwidth=document.documentElement.clientWidth
+var screenheight=document.documentElement.clientHeight
 
 var overallwidthscale=screenwidth/190
 var overallheightscale=screenheight/270
@@ -1493,9 +1505,14 @@ or failure
 to provide support.</p>
 <p style="font-style: italic;">Copyright TopAccolades Limited<br>www.topaccolades.com</p>
 
-Version: 3.0 (20170323) <br>Scale: <script language="Javascript">documentwrite(scalef)</script><br><br>&nbsp;</td></tr></table></div>
-<script language="Javascript">documentwrite('<div id="theimages" style="width:100%;height:'+Math.floor(scalef*12)+'px;overflow:hidden;background-color:black"  onClick="changepage(\'ourproducts\')"><center>');
+Version: 3.0 (20170327) <br>Scale: <script language="Javascript">documentwrite(scalef)</script><br><br>&nbsp;</td></tr></table></div>
+<script language="Javascript">documentwrite('<div id="theimages" style="width:100%;height:'+Math.floor(scalef*12)+'px;overflow:hidden;background-color:black"  onClick="openwebpage(\'http://i.compactfun.com/\')"><center>');
 var adsrequired=1
+
+function openwebpage(someurl)
+{
+document.location.href=someurl
+}
 
 var baseonelinermessages=[
 'Press ? for Help', '', 
@@ -1506,6 +1523,28 @@ var baseonelinermessages=[
 '']
 
 var admessages=[
+'<span style="color:magenta">Go to i.compactfun.com</span>',
+'<span style="color:magenta">Play many of our apps online.</span>',
+'<span style="color:magenta">Also download apps to install.</span>',
+'<span style="color:magenta">More details follow...</span>',
+'',
+'<span style="color:cyan">Try our Linxem app</span>',
+'<span style="color:cyan">A great new word game.</span>',
+'<span style="color:cyan">30 words presented to setter.</span>',
+'<span style="color:cyan">Setter selects 2 or more of these...</span>',
+'<span style="color:cyan">...and a new word that links them.</span>',
+'<span style="color:cyan">The linking word is called the Linxem</span>',
+'<span style="color:cyan">Solver presented with the Linxem...</span>',
+'<span style="color:cyan">... and same 30 words...</span>',
+'<span style="color:cyan">... and must identify selected words.</span>',
+'<span style="color:cyan">Try Linxem - Linxem Trial is free</span>',
+'',
+'<span style="color:cyan">Try our Volcano app</span>',
+'<span style="color:cyan">Like Volcano in this app...</span>',
+'<span style="color:cyan">... but new interface, gestures...</span>',
+'<span style="color:cyan">... and game state memory.</span>',
+'<span style="color:cyan">Try Volcano - Volcano Trial is free</span>',
+'',
 '<span style="color:violet">For Birthdays & Anniversaries...</span>',
 '<span style="color:violet">For Valentine\'s Day...</span>',
 '<span style="color:violet">For Mother\'s & Father\'s Days...</span>',
@@ -1536,7 +1575,7 @@ var admessages=[
 '<span style="color:red">Ask Sherlock for clues...</span>',
 '<span style="color:red">Then try to solve them</span>',
 '<span style="color:red">Try our great, free logic puzzle...</span>',
-'<span style="color:red">CSI Sherlock</span>',
+'<span style="color:red">Who Killed Vic?</span>',
 '',
 '<span style="color:magenta">Play Rummy against the system...</span>',
 '<span style="color:magenta">...or against a friend</span>',
@@ -1565,6 +1604,19 @@ var admessages=[
 '<span style="color:lime">You can even design the layout</span>',
 '<span style="color:lime">Or change letter numbers/values</span>',
 '<span style="color:lime">Try our free <span style="color:white">Xword4x4</span> app</span>',
+'',
+'<span style="color:cyan">Download our Word Ladder app</span>',
+'<span style="color:cyan">One word at the top...</span>',
+'<span style="color:cyan">...one at the bottom.</span>',
+'<span style="color:cyan">Fill in the 4 blank words in between...</span>',
+'<span style="color:cyan">...changing one letter at a time.</span>',
+'<span style="color:cyan">Word Ladder (TopAccolades) - free</span>',
+'',
+'<span style="color:cyan">Download our Flagalot app</span>',
+'<span style="color:cyan">A memory game  based around flags.</span>',
+'<span style="color:cyan">4-9 flags/card depending on level.</span>',
+'<span style="color:cyan">Tap on the flag on this & last card.</span>',
+'<span style="color:cyan">Flagalot - it\'s free</span>',
 '',
 '<span style="color:cyan">Exercise your brain;</span>',
 '<span style="color:cyan">10 sets of exercises;</span>',

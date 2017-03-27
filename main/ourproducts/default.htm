@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><title>Pyramid Numbers</title>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><title>Our Products</title>
 <meta name = "viewport" content = "user-scalable=no,width=device-width" />
 
 <script language="Javascript">
@@ -26,7 +26,7 @@ var combinationattributes=[0,30]
 var cfpackage='compactfun'
 
 
-var thiscfpage='pyramidnumbers'
+var thiscfpage='ourproducts'
 
 var interruptsrequired=0
 
@@ -95,7 +95,7 @@ handleclickproblem()
 }
 }
 </script><div style="width:100%; height:100%">
-<script language="Javascript">documentwrite('<table border=0 width=100% cellspacing=0 cellpadding=0 style="text-align: left" align=center><tr><td valign=bottom style="text-align: left; font-weight: bold; font-size: '+Math.floor(scalef*12)+'px; color: white; vertical-align: bottom; background-image:url(buttonbg.jpg)"><a name="Top"></a><table border=0 cellpadding=2 width=100% height='+Math.floor(scalef*14)+' cellspacing=0 valign=middle ><tr><td style="text-align: left; font-weight: bold; font-size: '+Math.floor(scalef*12)+'px; color: white">Pyramid Numbers</td><td valign=middle align=center width='+Math.floor(scalef*20)+'></td><td style="width:'+Math.floor(scalef*30)+'px;font-size:'+Math.floor(scalef*12)+'px;text-align:center;font-weight:bold;color:black"  onClick="togglehelp()">?</td></tr></table>')</script></td></tr><tr><td style="text-align: left; font-weight: normal; color: black; vertical-align: top;background-color:purple"><div id="therestart" style="width:100%;display:none">
+<script language="Javascript">documentwrite('<table border=0 width=100% cellspacing=0 cellpadding=0 style="text-align: left" align=center><tr><td valign=bottom style="text-align: left; font-weight: bold; font-size: '+Math.floor(scalef*12)+'px; color: white; vertical-align: bottom; background-image:url(buttonbg.jpg)"><a name="Top"></a><table border=0 cellpadding=2 width=100% height='+Math.floor(scalef*14)+' cellspacing=0 valign=middle ><tr><td style="text-align: left; font-weight: bold; font-size: '+Math.floor(scalef*12)+'px; color: white">Our Products</td><td valign=middle align=center width='+Math.floor(scalef*20)+'></td><td style="width:'+Math.floor(scalef*30)+'px;font-size:'+Math.floor(scalef*12)+'px;text-align:center;font-weight:bold;color:black"  onClick="togglehelp()">?</td></tr></table>')</script></td></tr><tr><td style="text-align: left; font-weight: normal; color: black; vertical-align: top;background-color:purple"><div id="therestart" style="width:100%;display:none">
 <script language="Javascript">documentwrite('<div style="height:'+heightspacer+'px;width:100%"></div><table cellspacing=0 cellpadding=0 border=0 style="width:'+Math.floor(scalef*190)+'px;height:'+Math.floor(scalef*240)+'px" align=center>')</script>
 <tr><td valign=middle style="vertical-align:top">
 <div style="position:relative;left:0px;top:0px;height:100%;width:100%">
@@ -152,478 +152,152 @@ showad2()
 <tr><td valign=top style="vertical-align:top">
 <div style="position:relative;left:0px;top:0px;height:100%;width:100%">
 <div style="position:absolute;left:0px;top:0px;height:100%;width:100%">
+<SCRIPT LANGUAGE="JavaScript" src="ourproductsjs.htm">
+</SCRIPT>
+
 <SCRIPT LANGUAGE="JavaScript">
-<!-- Begin
+</SCRIPT>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
 // All code copyright of TopAccolades Limited
-adfrequency=2
+
+
+
+function runonload()
+{
+}
+
 
 function continueafterad()
 {
-createpuzzle()
 }
-var level=0
-function runonload()
+
+var combinationtexts=[]
+function displaypage(somepage)
 {
-changeexerciselevel(0)
-createpuzzle()
-}
-
-function ith(someitem, somelist)
-{
-for (var i=0; i<somelist.length; i++)
-{
-if (someitem==somelist[i]) {return i}
-}
-return -1
-}
-
-function randomnumber(num) {
-// returns a random number from 1 to num
-var ran=Math.round(Math.random()*num)
-if (ran == 0) {ran = num}  // ran initially 0 to num - but 0 and num have half the probability of the other numbers
-return ran
-}
-
-function randominrange(num1, num2)
-{
-// num2 >=num1
-var somediff=num2-num1
-var somerand=randomnumber(somediff+1)
-return (num1-1)+somerand
-}
-
-function differentrandomnumber(somen, somecheck)
-{
-var somerandom=randomnumber(somen)
-if (somerandom!=somecheck) {return somerandom} else {return differentrandomnumber(somen, somecheck)}
-}
-
-function shufflearray(somearray)
-{
-
-var temparray=somearray
-var shuffled=[]
-packsize=somearray.length
-var ran
-var i
-for (var i=0; i<packsize; i++)
-{
-ran = randomnumber(temparray.length)
-shuffled[i] = temparray[ran-1]
-temparray = removeElement(ran-1, temparray)
-}
-return shuffled
-}
-
-function removeElement(index, somearray)
-{
-var beg=somearray.slice(0, index)
-var end=[]
-if (index+1 < somearray.length) {end = somearray.slice(index+1)}
-return beg.concat(end)
-}
-
-
-
-
-function tailarray(somearray)
-{
-return somearray.slice(1, somearray.length)
-}
-
-function headarray(somearray)
-{
-return somearray[0]
-}
-
-
-
-function empty(array) 
-// checks whether an array is empty:  returns true if so, false if not.
-{
-if (array.length == 0)
-     return true  
-else
-     return false
-
-}
-
-function member(element, array) 
-// checks whether element is a member of array:  returns true if so, false if not.
-{
-var check = false
-var i = 0
-while (i<array.length && !check){check = array[i]==element; i++};
-return check
-
-}
-
-</script>
-<script language="Javascript">
-
-
-// book extract
-
-function copylist(somelist)
-{
-var somereturn=[]
-for (var i=0; i<somelist.length; i++)
-{
-somereturn[i]=somelist[i]
-}
-return somereturn
-}
-
-function numbersort(somea, someb)
-{
-return somea-someb
-}
-
-
-var puzzle
-var basesize
-var theheight
-var maxbasenumber
-var maxcalc
-
-
-function potentialoperators(somea, someb)
-{
-var somereturn=[]
-if ((somea+someb) <= maxcalc && (somea+someb)>=maxcalc*-1 && (somea+someb)!=0) {somereturn=somereturn.concat(['+'])}
-if ((somea-someb) <= maxcalc && (somea-someb)>=maxcalc*-1 && (somea-someb)!=0) {somereturn=somereturn.concat(['-'])}
-if ((somea*someb) <= maxcalc && (somea*someb)>=maxcalc*-1 && (somea*someb)!=0) {somereturn=somereturn.concat(['*', '*'])}
-if (someb!=0)
-{
-if ((somea/someb) <= maxcalc && (somea/someb)>=maxcalc*-1 && (somea/someb)==Math.round(somea/someb)) {somereturn=somereturn.concat(['/', '/', '/'])}
-}
-
-return somereturn
-}
-var theheight=basesize
-
-function createpuzzle()
-{
-restartconfirmationrequired=1
-
-basesize=[4,5,5][level]
-maxbasenumber=[20, 20, 20][level]
-maxcalc=[99, 199, 999][level]
-document.getElementById('problem').style.display = 'block'
-document.getElementById('solution').style.display = 'none'
-theheight=basesize
-puzzle=[]
-basenumbers=[]
-var ops
-var potentialops
-for (var i=0; i<basesize; i++)
-{
-basenumbers[i]=randomnumber(maxbasenumber)
-}
-// basenumbers.sort(numbersort).reverse()
-puzzle[0]=[copylist(basenumbers), []]
-buildpyramid()
-
-
-}
-
-
-
-function buildpyramid()
-{
-var somebasenumbers
-var baseops=[]
-var lastindex=puzzle.length-1
-somebasenumbers=puzzle[lastindex][0]
-// alert(basenumbers)
-var somea;
-var someb;
-var potentialops
-var op
-puzzle[lastindex+1]=[[], []]
-for (var i=0; i<somebasenumbers.length-1; i++)
-{
-somea=somebasenumbers[i]
-someb=somebasenumbers[i+1]
-potentialops=potentialoperators(somea, someb)
-op=potentialops[randomnumber(potentialops.length)-1]
-puzzle[lastindex][1][i]=op
-puzzle[lastindex+1][0][i]=eval('('+somea+')'+op+'('+someb+')')
-}
-if (puzzle[lastindex+1][0].length>1)
-{
-buildpyramid()
-}
-else
-{
-createthebooktext()
-startcountup()
-}
-}
-
-var cellwidth=Math.floor(scalef*9)
-var cellheight=Math.floor(scalef*22)
-
-function borderit(sometext)
-{
-return '<table align=center border=1 width=100% height='+cellheight+' cellpadding=0 cellspacing=0><tr><td style="text-align:center;font-size:'+thefontsize+';color:black;font-weight:bold;background-color:lemonchiffon">'+sometext+'</td></tr></table>'
-// return sometext
-}
-
-function borderitop(sometext)
-{
-return '<table align=center border=1 width=100% height='+cellheight+' cellpadding=0 cellspacing=0><tr><td style="text-align:center;font-size:'+thefontsize+';color:black;font-weight:bold;background-color:white">'+sometext+'</td></tr></table>'
-// return sometext
-}
-
-var thefontsize
-
-function createthebooktext()
-{
-var tablewidth='100%'
-thefontsize=Math.floor(scalef*10)+'px'
-basetimeavailable=[30, 60, 90][level]
-var columns=(3*basesize)+basesize-1
-var hidden=randomnumber(3) // 1=top, 2=left, 3=right
-
-
-var somebooktext='<div style="width:100%;height:'+Math.floor(scalef*10)+'px"></div>'
-var somepadding
-var somepuzzleindex
-var somepaddingtext
-var someval
-var somewidth
-
-somebooktext=somebooktext+'<table  valign=middle align=center border=0 cellpadding=0 cellspacing=0>'
-
-somebooktext=somebooktext+'<tr>'
-
-
-for (var i=0; i<columns; i++)
-{
-if (Math.round((i+1)/2)==(i+1)/2) {somewidth=cellwidth+Math.floor(scalef*1)} else {somewidth=cellwidth} // make every other one wider
-somebooktext=somebooktext+'<td style="text-align:center;font-size:'+thefontsize+';color:white;font-weight:bold"><div style="width:'+somewidth+'px">&nbsp;</div></td>'
-}
-somebooktext=somebooktext+'</tr>'
-for (var i=0; i<theheight; i++)
-{
-somepuzzleindex=puzzle.length-i-1
-somepadding=(columns-(3*puzzle[somepuzzleindex][0].length)-puzzle[somepuzzleindex][1].length)/2
-somepaddingtext=''
-if (somepadding>0) {somepaddingtext='<td  colspan='+somepadding+'></td>'}
-somebooktext=somebooktext+'<tr>'+somepaddingtext
-for (var j=0; j<puzzle[somepuzzleindex][0].length-1; j++)
-{
-someval=puzzle[somepuzzleindex][0][j]
-
-// blank out all hidden values
-if (i==0 && hidden==1) {someval=''}
-if (i==theheight-1) {if (j==0 && hidden==2) {someval=''}}
-if (i!=0 && i!= theheight-1) {someval=''}
-if (i==0 && hidden==1) {someval=''}
-// end blanking
-
-someval=borderit(someval)
-somebooktext=somebooktext+'<td colspan=3  style="font-size:'+thefontsize+';color:black;font-weight:bold; text-align:center">'+someval+'</td>'
-
-someval=puzzle[somepuzzleindex][1][j]
-if (someval=='*') {someval='x'}
-// if (someval=='/') {someval='÷'}
-someval='<span style="color:darkred">'+someval+'</span>'
-someval=borderitop(someval)
-somebooktext=somebooktext+'<td  style="font-size:'+thefontsize+';color:black;font-weight:bold; text-align:center">'+someval+'</td>'
-
-}
-// last value in a level
-
-someval=puzzle[somepuzzleindex][0][puzzle[somepuzzleindex][0].length-1] 
-
-// blank out all hidden values
-if (i==0 && hidden==1) {someval=''}
-if (i==theheight-1 && hidden==3) {someval=''}
-if (i!=0 && i!= theheight-1) {someval=''}
-// end blanking values
-
-someval=borderit(someval)
-
-somebooktext=somebooktext+'<td colspan=3 style="font-size:'+thefontsize+';color:black;font-weight:bold; text-align:center">'+someval+'</td>'
-
-somebooktext=somebooktext+somepaddingtext+'</tr>'
-}
-somebooktext=somebooktext+'</table>'
-
-changetextvalue('problem', somebooktext)
-
-// Solution
-somebooktext='<div style="width:100%;height:'+Math.floor(scalef*10)+'px"></div>'
-
-somebooktext=somebooktext+'<table  valign=middle align=center border=0 cellpadding=0 cellspacing=0>'
-
-somebooktext=somebooktext+'<tr>'
-
-
-for (var i=0; i<columns; i++)
-{
-if (Math.round((i+1)/2)==(i+1)/2) {somewidth=cellwidth+Math.floor(scalef*1)} else {somewidth=cellwidth} // make every other one wider
-somebooktext=somebooktext+'<td style="text-align:center;font-size:'+thefontsize+';color:white;font-weight:bold"><div style="width:'+somewidth+'px">&nbsp;</div></td>'
-}
-somebooktext=somebooktext+'</tr>'
-for (var i=0; i<theheight; i++)
-{
-somepuzzleindex=puzzle.length-i-1
-somepadding=(columns-(3*puzzle[somepuzzleindex][0].length)-puzzle[somepuzzleindex][1].length)/2
-somepaddingtext=''
-if (somepadding>0) {somepaddingtext='<td  colspan='+somepadding+'></td>'}
-somebooktext=somebooktext+'<tr>'+somepaddingtext
-for (var j=0; j<puzzle[somepuzzleindex][0].length-1; j++)
-{
-someval=puzzle[somepuzzleindex][0][j]
-
-
-
-someval=borderit(someval)
-somebooktext=somebooktext+'<td colspan=3  style="font-size:'+thefontsize+';color:black;font-weight:bold; text-align:center">'+someval+'</td>'
-
-someval=puzzle[somepuzzleindex][1][j]
-if (someval=='*') {someval='x'}
-// if (someval=='/') {someval='÷'}
-someval='<span style="color:darkred">'+someval+'</span>'
-someval=borderitop(someval)
-somebooktext=somebooktext+'<td  style="font-size:'+thefontsize+';color:black;font-weight:bold; text-align:center">'+someval+'</td>'
-
-}
-// last value in a level
-
-someval=puzzle[somepuzzleindex][0][puzzle[somepuzzleindex][0].length-1] 
-
-
-
-someval=borderit(someval)
-
-somebooktext=somebooktext+'<td colspan=3 style="font-size:'+thefontsize+';color:black;font-weight:bold; text-align:center">'+someval+'</td>'
-
-somebooktext=somebooktext+somepaddingtext+'</tr>'
-}
-somebooktext=somebooktext+'</table>'
-
-changetextvalue('solution', somebooktext)
-
-
-}
-
-
-
-
-
-
-// end book
-
-
-var thedivs=['maingame', 'more']
-function displaydiv(somediv)
-{
-for (var i=0; i<thedivs.length; i++)
-{
-document.getElementById(thedivs[i]).style.display = 'none'
-
-
-}
-document.getElementById(thedivs[somediv]).style.display = 'inline'
+changetextvalue('thecontent', eval(somepage+'listing'))
 handleclickproblem()
-
 }
 
-var basetimes=[30, 60, 90]
-var basetimeavailable=basetimes[level]
-var thetimeavailable
-function changeexerciselevel(someval)
+for (var i=0; i<combinationlist.length-1; i++)
 {
 
-var somenewlevel=level+someval
-if (somenewlevel==3) {somenewlevel=2}
-if (somenewlevel==-1) {somenewlevel=0}
-level=somenewlevel
-changetextvalue("exerciselevel", level+1)
-basetimeavailable=basetimes[level]
-
-}
 
 
-var countuptimer
+var someitem=combinationlist[i][0]
+var sometitle=combinationlist[i][1]
 
-var timetaken
-function startcountup()
+var somelist=combinationlist[i][2].slice(0, combinationlist[i][2].length-1)
+var sometext='<table align=center valign=top border=0 cellpadding=0 cellspacing=0 style="background-color:lemonchiffon;width:100%"><tr><td><table align=center cellpadding=0 cellspacing=0 border=0 style="background-color:lemonchiffon;width:100%"><tr><td valign=top>'+
+'<b>'+sometitle+'</b></td><td align=right><img width='+Math.floor(scalef*36)+' src="large'+someitem+'icon.png" align=right></td></tr><tr><td valign=bottom>'+somelist.length+' games/puzzles:</td><td><table align=right border=0 cellpadding=0 cellspacing=0 style="width:'+Math.floor(scalef*45)+'px;vertical-align=middle"><tr><td style="background-image:url(buttonbg.jpg);text-align:center" onClick="displaypage(\'ourproducts\')">Back</td></tr></table></td></tr>'+
+'<tr><td align=center colspan=2><table border=0 align=center><tr><td></td><td></td></tr>' 
+if (i>0)
 {
-timetaken=0
-document.getElementById('timetakentable').style.backgroundColor='limegreen'
-
-thetimeavailable=basetimeavailable
-var somesecs=Math.floor(timetaken)
-changetextvalue('timetaken', somesecs)
-
-if (countuptimer != null) {clearTimeout(countuptimer)}
-
-countuptimer= setTimeout('countup()', 1000)
-
-}
-
-function showanswer()
+var someitems=[]
+for (var j=0; j<somelist.length; j++)
 {
-restartconfirmationrequired=0
-
-document.getElementById('problem').style.display = 'none'
-document.getElementById('solution').style.display = 'block'
-if (countuptimer != null) {clearTimeout(countuptimer)}
-
+someitems[j]=somelist[j][1]
 }
+someitems=someitems.sort()
+if (someitems.length/2!=Math.floor(someitems.length/2)) {someitems=someitems.concat([''])}
 
-function countup()
+if (someitems.length>9)
 {
-timetaken++
-
-var somesecs=Math.floor(timetaken)
-if (somesecs>=thetimeavailable) 
+for (var j=0; j<someitems.length/2; j++)
 {
-document.getElementById('timetakentable').style.backgroundColor='red'
+sometext=sometext+'<tr><td align=left>'+someitems[j*2]+'</td><td>'+someitems[j*2+1]+'</td></tr>'
+}
+}
+else
+{
+for (var j=0; j<someitems.length; j++)
+{
+sometext=sometext+'<tr><td align=left>'+someitems[j]+'</td><td></td></tr>'
+}
+}
 
 }
-if (somesecs>999) {somesecs='End'}
-changetextvalue('timetaken', somesecs)
+else // i=0 - Compact Fun
+{
+sometext=sometext+'<tr><td align=center colspan=2>Compact Fun contains all the games and puzzles in the other Compact... apps.  For a full listing, with brief descriptions, press the ? button.</td><td></td></tr>'
 
-if (countuptimer != null) {clearTimeout(countuptimer)}
+}
 
-countuptimer= setTimeout('countup()', 1000)
+sometext=sometext+'</table></td></tr></table></td></tr></table>'
+
+combinationtexts[i]=sometext
+
+eval('var '+someitem+'listing=combinationtexts['+i+']')
 
 }
 
 
 
-</script>
-<script language="Javascript">
-documentwrite('<form name="playform"><div id="maingame" style="position:relative;display:inline"><div style="width:100%; height:'+Math.floor(scalef*30)+'px"></div><table border=1 bgcolor=lemonchiffon width=100%  cellpadding=0 cellspacing=0>')
-documentwrite('<tr><td><div id="problem" style="width:100%;height:'+Math.floor(scalef*150)+'px;background-color:green;display:block"></div><div id="solution" style="width:100%;height:'+Math.floor(scalef*150)+'px;background-color:green;display:none"></div></td></tr>')
+sometext=
+'<table align=center valign=top border=0 cellpadding=0 cellspacing=0 style="background-color:lemonchiffon;width:100%"><tr><td><table align=center cellpadding=0 cellspacing=0 border=0 style="background-color:lemonchiffon;width:100%"><tr><td>'+
+'<img width='+Math.floor(scalef*36)+' src="largeourproductsicon.png" align=right><b>TopAccolades Products</b><br>Games, puzzles and other apps.<br>Press ? for descriptions of the games and puzzles in the Compact... apps.<br></td></tr>'+
+'<tr><td align=center><table border=0 valign=middle cellspacing='+Math.floor(scalef*1)+' cellpadding=0 align=center><tr><td></td></tr>' 
 
-documentwrite('</td></tr><tr><td><table border=0 width=100% ><tr>')
-documentwrite('<td>')
-documentwrite('<table border=1 id="timetakentable" cellpadding=0 cellspacing=0 style="text-align:center;width:'+Math.floor(scalef*30)+'px;background-color:limegreen"><tr><td style="text-align:center"><div id="timetaken">0</div></td></tr></table>')
-documentwrite('</td>')
-documentwrite('<td>')
-documentwrite('<table border=1 cellpadding=0 cellspacing=0 width='+Math.floor(scalef*40)+'px><tr><td style="background-image:url(buttonbg.jpg);text-align:center" onClick="showad()">New</td></tr></table>')
-documentwrite('</td>')
-documentwrite('<td>')
-documentwrite('<table border=1 cellpadding=0 cellspacing=0 width='+Math.floor(scalef*40)+'px><tr><td style="background-image:url(buttonbg.jpg);text-align:center" onClick="showanswer()">Show</td></tr></table>')
-documentwrite('</td>')
-documentwrite('<td  width='+Math.floor(scalef*20)+'>')
-documentwrite('<table border=1 cellpadding=0 cellspacing=0 width=100%><tr><td style="background-image:url(buttonbg.jpg);text-align:center;width:'+Math.floor(scalef*20)+'px" onClick="changeexerciselevel(-1)">-</td></tr></table></td><td><table border=1 bgcolor=white cellpadding=0 cellspacing=0 width='+Math.floor(scalef*20)+'px><tr><td style="text-align:center"><div id="exerciselevel">1</div></td></tr></table></td><td width='+Math.floor(scalef*20)+'><table border=1 cellpadding=0 cellspacing=0 width=100%><tr><td style="background-image:url(buttonbg.jpg);text-align:center;width:'+Math.floor(scalef*20)+'px" onClick="changeexerciselevel(1)">+</td></tr></table>')
-documentwrite('</td>')
-documentwrite('</tr>')
-documentwrite('</table>')
-documentwrite('</td></tr></table>')
-documentwrite('</div></form>')
+someitems=[]
+for (var j=0; j<combinationlist.length-1; j++)
+{
+someitems[j]=[combinationlist[j][0], combinationlist[j][1]]
+}
+someitems=someitems.concat([['csisherlock', 'CSI Sherlock'], ['brainboxfun', 'BrainBoxFun'], ['dailycounter', 'Daily Counter']])
+for (var j=0; j<someitems.length; j++)
+{
+sometext=sometext+
+'<tr><td width='+Math.floor(scalef*120)+'><table border=1 cellpadding=0 cellspacing=0 style="width:100%; vertical-align=middle;align:center" align=center><tr><td style="text-align:center;background-image:url(\'buttonbg.jpg\')" onClick="displaypage(\''+someitems[j][0]+'\')">'+someitems[j][1]+'</td></tr></table></td></tr>'
 
-</script>
+}
 
 
+
+sometext=sometext+'</table></td></tr></table></td></tr></table>'
+
+var ourproductslisting=sometext
+
+
+sometext=
+'<table align=center valign=top border=0 cellpadding=0 cellspacing=0 style="background-color:lemonchiffon;width:100%"><tr><td><table align=center cellpadding=0 cellspacing=0 border=0 style="background-color:lemonchiffon;width:100%"><tr><td valign=top>'+
+'<b>CSI Sherlock</b></td><td align=right><img width='+Math.floor(scalef*36)+' src="csisherlockicon.png" align=right></td></tr><tr><td valign=bottom>An interactive, graphical version of Mystery Clues.</td><td><table align=right border=0 cellpadding=0 cellspacing=0 style="width:'+Math.floor(scalef*45)+'px;vertical-align=middle"><tr><td style="background-image:url(buttonbg.jpg);text-align:center" onClick="displaypage(\'ourproducts\')">Back</td></tr></table></td></tr>'+
+'<tr><td align=left colspan=2>'+
+'<br>Vic has been murdered.  Each location contains a suspect and weapon.  Vic is found in one of these.<br><br>Ask Sherlock for a new clue about a person, weapon or location - but there may not be any.  Even the murderer may not be mentioned in a clue - use a process of elimination.  <p style="text-align:center; color:red">Elementary!  Well, maybe not. <br>Just follow the clues.</p>'+
+
+'</td></tr></table></td></tr></table>'
+
+var csisherlocklisting=sometext
+
+sometext=
+'<table align=center valign=top border=0 cellpadding=0 cellspacing=0 style="background-color:lemonchiffon;width:100%"><tr><td><table align=center cellpadding=0 cellspacing=0 border=0 style="background-color:lemonchiffon;width:100%"><tr><td valign=top>'+
+'<b>BrainBoxFun</b></td><td align=right><img width='+Math.floor(scalef*36)+' src="largebrainboxfunicon.png" align=right></td></tr><tr><td valign=bottom>Brain-training exercises.</td><td><table align=right border=0 cellpadding=0 cellspacing=0 style="width:'+Math.floor(scalef*45)+'px;vertical-align=middle"><tr><td style="background-image:url(buttonbg.jpg);text-align:center" onClick="displaypage(\'ourproducts\')">Back</td></tr></table></td></tr>'+
+'<tr><td align=left colspan=2>'+
+'<br>10 different exercises, each with 3 levels. Repeat each one from 1-5 times.<br><br>Stretch various aspects of your brain-power: memory, verbal comprehension, pattern recognition, word power, mental arithmetic, planning and mental rotation skills.<br><br>Your profile is stored and recommendations on changes to this are made at the end of your session.'+
+
+'</td></tr></table></td></tr></table>'
+
+var brainboxfunlisting=sometext
+
+
+sometext=
+'<table align=center valign=top border=0 cellpadding=0 cellspacing=0 style="background-color:lemonchiffon;width:100%"><tr><td><table align=center cellpadding=0 cellspacing=0 border=0 style="background-color:lemonchiffon;width:100%"><tr><td valign=top>'+
+'<b>Daily Counter</b></td><td align=right><img width='+Math.floor(scalef*36)+' src="dailycountericon.png" align=right></td></tr><tr><td valign=bottom>For health, wealth & more.</td><td><table align=right border=0 cellpadding=0 cellspacing=0 style="width:'+Math.floor(scalef*45)+'px;vertical-align=middle"><tr><td style="background-image:url(buttonbg.jpg);text-align:center" onClick="displaypage(\'ourproducts\')">Back</td></tr></table></td></tr>'+
+'<tr><td align=left colspan=2>'+
+'<br>Our free app that keeps track of anything you count on a daily basis:'+
+'<ul><li>energy intake (cals. or points)<li>activity time<li>distance walked<li>money spent</ul>'+
+'Set targets (minimum or maximum) and see 7 days\' totals and average, max. and min. since start.  Allows up to four separate counts.'+
+'</td></tr></table></td></tr></table>'
+
+var dailycounterlisting=sometext
+
+
+documentwrite('<div style="display:block;background-color:lemonchiffon;width:100%; height:'+Math.floor(scalef*240)+'px"><table height=100% width=100% cellpadding=0 cellspacing=0 border=1><tr><td  id="thecontent" valign=top>&nbsp;</td></tr></table></div>')
+
+displaypage('ourproducts')
+
+</SCRIPT>
 </div></div>
 </td></tr></table>
 <script language="Javascript">documentwrite('<div style="height:'+heightspacer+'px;width:100%"></div>')</script>
@@ -753,43 +427,22 @@ documentwrite('<br><table style="background-color:beige" valign=middle align=cen
 <br><p><script language="Javascript">
 if (helpindexrequired==1)
 {
-documentwrite('<a href="#intro">Introduction</a><br><a href="#levels">Levels and times</a><br><a href="#terms">Terms of use</a><br><br>')}
+documentwrite('<a href="#intro">The games</a><br><a href="#terms">Terms of use</a><br><br>')}
 </script>
 
+<script language="Javascript" src="summaries.htm">
+</script>
 
-<a name="intro"></a>Pyramid Numbers is a challenge of both your mental arithmetic and memory.
+<a name="intro"></a>The Compact Fun range includes the following games and puzzles:  
+<br>
+<hr>
+<script language="Javascript" src="summaries.htm">
+</script>
+<script language="Javascript">
+documentwrite(thesummaries)
+</script>
 
-  
-<br><br> 
-A complete Pyramid Numbers puzzle has a number of layers, each of which consists of a set of numbers, each number separated from its neighbours by one of the following arithmetic operators: +, -, x or /.  Each layer above the bottom layer has one fewer number compared to the layer below, until the peak of the pyramid is reached where the layer consists of just a single number.  The key feature of the numbers in all but the bottom layer is that each number is the result of the operation specified directly beneath it.  So, if a layer has the sequence 32 x 2 + 6, the two numbers in the layer above will be 64 (i.e. 32 x 2) and 8 (i.e. 2 + 6).
-
-<br><br> 
-
-When the puzzle opens, or whenever you press the <i>New</i> button, you will be presented 
-with a pyramid in which the number in one of the corners (top, bottom-right or bottom-left) is hidden, as are all the numbers in the layers between the top and bottom layers.
-<br><br>
-Your objective is to use your mental arithmetic skills and memory to determine in your mind what the number in the hidden corner is.  To do this, you will, of course, have to determine the values in the intermediate layers as you go along.
-<br><br>
-Once you're satisfied that you know what the missing corner number is, just press the <i>Show</i> button, which reveals the completed pyramid.
-<br><br>
-Note: The numbers used may be positive or negative, but they are always whole numbers, so if you find that the result of a division at any point is not a whole number, you can be sure that you have made a mistake.
-<br><br>This puzzle can be played as a game if two or more people can see the screen.  The winner is the first player to give the correct answer.
-
-
-<script language="Javascript">if (helpindexrequired==1) {documentwrite('<p><a href="#Top"><i>Return to top</i></a>')}</script>
-
-<br><br><a name="levels"></a><b>Levels and times</b>
-<br><br>
-There are three levels (1-3). The default level is 1.
-<ul>
-<li>At level 1, the pyramid has 4 layers, and 4 numbers in the base layer, and the numbers to deal with range from -99 to +99.
-<li>At level 2, the pyramid has 5 layers, and 5 numbers in the base layer, and the numbers to deal with range from -199 to +199.
-<li>At level 3, the pyramid has 5 layers, and 5 numbers in the base layer, and the numbers to deal with range from -999 to +999.
-</ul>
-
-The current level is shown near the bottom-right corner, with '+' and '-' buttons at the sides, which allow you to change the level.
-<br><br>After the problem is presented, a timer starts (bottom left), which initially has a green background.  For each level, there is a default time suggested, after which the background of the timer changes to red.  The time continues to count up, a second at a time, until the result of the final line is displayed, even when you have exceeded the suggested time.  The suggested times are 30s for level 1, 60s for level 2 and 90s for level 3.
-<br><br>Press the <i>New</i> button at any time for a new puzzle, using the current level setting.
+<hr>
 
 <script language="Javascript">if (helpindexrequired==1) {documentwrite('<p><a href="#Top"><i>Return to top</i></a></p>')}</script>
 <a name="terms"></a>
